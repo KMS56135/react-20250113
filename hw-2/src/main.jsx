@@ -1,11 +1,9 @@
 import { createRoot } from "react-dom/client";
 import { Fragment } from "react";
+import { restaurants } from "../materials/mock";
 
 const rootElement = document.querySelector("#root");
-
 const reactRoot = createRoot(rootElement);
-
-import { restaurants } from "../materials/mock";
 
 reactRoot.render(
   <>
@@ -18,11 +16,7 @@ reactRoot.render(
 
           <ul>
             {menu.map(({ name, id }) => {
-              return (
-                <Fragment key={id}>
-                  <li>{name}</li>
-                </Fragment>
-              );
+              return <li key={id}>{name}</li>;
             })}
           </ul>
 
@@ -30,11 +24,7 @@ reactRoot.render(
 
           <ul>
             {reviews.map(({ text, id }) => {
-              return (
-                <Fragment key={id}>
-                  <li>{text}</li>
-                </Fragment>
-              );
+              return <li key={id}>{text}</li>;
             })}
           </ul>
         </Fragment>
