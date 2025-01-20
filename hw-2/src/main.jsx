@@ -9,15 +9,15 @@ import { restaurants } from "../materials/mock";
 
 reactRoot.render(
   <>
-    {restaurants.map((restaurant) => {
+    {restaurants.map(({ id, name, menu, reviews }) => {
       return (
-        <Fragment key={restaurant.id}>
-          <h2>{restaurant.name}</h2>
+        <Fragment key={id}>
+          <h2>{name}</h2>
 
           <h3>Меню</h3>
 
           <ul>
-            {restaurant.menu.map(({ name, id }) => {
+            {menu.map(({ name, id }) => {
               return (
                 <Fragment key={id}>
                   <li>{name}</li>
@@ -29,7 +29,7 @@ reactRoot.render(
           <h3>Отзывы</h3>
 
           <ul>
-            {restaurant.reviews.map(({ text, id }) => {
+            {reviews.map(({ text, id }) => {
               return (
                 <Fragment key={id}>
                   <li>{text}</li>
