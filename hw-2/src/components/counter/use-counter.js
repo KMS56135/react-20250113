@@ -11,7 +11,7 @@ export const useCount = () => {
     });
   };
 
-  const OnDecrement = () => {
+  const onDecrement = () => {
     setCount((prevState) => {
       return {
         value: prevState.value - 1,
@@ -22,6 +22,6 @@ export const useCount = () => {
   return {
     count: count.value,
     onIncrement,
-    OnDecrement,
+    onDecrement,
   }
 };
