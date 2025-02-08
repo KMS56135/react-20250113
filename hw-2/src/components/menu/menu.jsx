@@ -1,4 +1,5 @@
-import { Counter } from "../counter/counter";
+
+import { DishCounter } from "../dish-counter/dish-counter";
 import { Dish } from "../dish/dish";
 
 export const Menu = ({ menu }) => {
@@ -10,7 +11,7 @@ export const Menu = ({ menu }) => {
           return (
             <li key={menu.id}>
               <Dish name={menu.name} price={menu.price} ingredients={menu.ingredients} />
-              <Counter />
+              <DishCounter />
             </li>
           );
         })}

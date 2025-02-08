@@ -1,4 +1,5 @@
 import { Menu } from "../menu/menu";
+import { ReviewForm } from "../review-form/ReviewForm";
 import { Reviews } from "../reviews/reviews";
 
 export const Restaurant = ({ name, menu, reviews }) => {
@@ -11,6 +12,7 @@ export const Restaurant = ({ name, menu, reviews }) => {
       <h2>{name}</h2>
       {menu.length ? <Menu menu={menu} /> : <div> empty menu</div>}
       {reviews.length ? <Reviews reviews={reviews} /> : <div> empty reviews</div>}
+      <ReviewForm />
     </section>
   );
 };
