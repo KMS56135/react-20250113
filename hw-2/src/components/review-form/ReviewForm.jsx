@@ -1,14 +1,12 @@
 import { Counter } from "../counter/counter";
-import { useCount } from "../dish-counter/use-counter";
 import { useForm } from "./use-form";
 
 export const ReviewForm = () => {
-  const { count, onIncrement, onDecrement } = useCount();
-  const { form, setName, setComment, reset } = useForm();
-  const { name, comment } = form;
+  const { form, setName, setComment, increment, decrement, reset } = useForm();
+  const { name, comment, count } = form;
 
   return (
-    <form>
+    <form onSubmit={(event) => event.preventDefault()}>
       <div>
         <label htmlFor="name"></label>
         <input
@@ -30,7 +28,7 @@ export const ReviewForm = () => {
           placeholder="Ваш комментарий"
         ></textarea>
       </div>
-      <Counter count={count} onIncrement={onIncrement} onDecrement={onDecrement} />
+      <Counter count={count} onIncrement={increment} onDecrement={decrement} />
       <button onClick={() => reset()}>Reset</button>
     </form>
   );
