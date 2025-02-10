@@ -27,12 +27,12 @@ const reducer = (form, { type, payload }) => {
     case INCREMENT_ACTION:
       return {
         ...form,
-        count: form.count + 1,
+        count: form.count < 5 ? form.count + 1 : form.count,
       };
     case DECREMENT_ACTION:
       return {
         ...form,
-        count: form.count - 1,
+        count: form.count >= 0 ? form.count - 1 : form.count,
       };
     case RESET_ACTION:
       return INITIAL_VALUE;
